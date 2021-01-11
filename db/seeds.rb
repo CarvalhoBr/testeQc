@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'json'
+
+question_list = JSON.parse(File.read('questions.json'))
+question_access_list = JSON.parse(File.read('question_access.json'))
+
+questions = Question.create(question_list)
