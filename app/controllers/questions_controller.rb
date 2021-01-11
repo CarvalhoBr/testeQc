@@ -14,5 +14,12 @@ class QuestionsController < ApplicationController
 
   end
 
+  def hot_subjects
+
+    @questions = Question.daily_accessed_disciplines
+
+    render json: @questions
+  
+	end
 
 end

@@ -24,4 +24,13 @@ class Question < ApplicationRecord
 		
 	end
 
+	def self.daily_accessed_disciplines
+		self.find_by_sql("
+			select sum(q.daily_access) as total_daily_access, q.discipline
+			from questions as q
+			group by q.discipline
+			order by total_daily_access
+		")
+	end
+
 end
