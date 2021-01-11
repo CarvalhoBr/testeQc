@@ -14,12 +14,12 @@ class Question < ApplicationRecord
 		end
 
 		self.find_by_sql("
-      select sum(qa.times_accessed)as t_accessed, q.*
+      select sum(qa.times_accessed)as times_accessed, q.*
 	    from questions as q 
 	    inner join question_accesses as qa on q.id = qa.questions_id
       where (qa.date > (date 'Jul 27 2020' - interval '#{period}' ))
       group by q.id
-      order by t_accessed desc
+      order by times_accessed desc
 		")
 		
 	end
