@@ -11,3 +11,4 @@ question_list = JSON.parse(File.read('questions.json'))
 question_access_list = JSON.parse(File.read('question_access.json'))
 
 questions = Question.create(question_list)
+question_access = QuestionAccess.create(question_access_list)
