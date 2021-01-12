@@ -3,9 +3,15 @@
 ## Rodando o projeto
 
 ```bash
+docker-compose up //Sobe o container do banco de dados
+
 bundle install
+rails db:migrate
+rails db:seed
 rails server
 ```
+Por se tratar de uma quantidade muito grande de dados o seed pode demorar um pouco
+
 ## Desafio
 Dados os arquivos json com os dados das questões devem ser elaborados os seguintes modelos de busca:
 - Disciplinas com questões mais quentes: Listar as disciplinas onde as questões foram as mais acessadas nas ultimas 24H
