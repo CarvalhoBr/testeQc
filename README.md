@@ -3,7 +3,7 @@
 ## Rodando o projeto
 
 ```bash
-docker-compose up //Sobe o container do banco de dados
+docker-compose up #Sobe o container do banco de dados
 
 bundle install
 rails db:migrate
