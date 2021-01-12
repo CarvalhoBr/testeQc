@@ -1,0 +1,17 @@
+version: '3'
+
+services: 
+  database:
+    container_name: database
+    image: postgres:12
+    environment: 
+      - POSTGRES_DB=railsDb
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+    volumes: 
+      - database-data:/var/lib/postgresql/data
+    ports: 
+      - 5433:5432
+
+volumes: 
+  database-data:
